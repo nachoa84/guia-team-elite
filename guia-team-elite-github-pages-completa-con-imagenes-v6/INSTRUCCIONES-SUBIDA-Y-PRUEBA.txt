@@ -1,0 +1,58 @@
+ARCHIVOS LISTOS PARA NETLIFY
+
+Esta carpeta contiene:
+- index.html: la guía original limpia.
+- avance.html: página aparte para registrar avances.
+- assets/: fotos, logos e imágenes.
+- css/: estilos de la guía.
+- js/: scripts de la guía.
+- CODIGO-APPS-SCRIPT.js: código para conectar Google Sheets.
+
+CÓMO SUBIR A NETLIFY
+
+1. Subí esta carpeta completa descomprimida a Netlify.
+2. No subas solamente index.html.
+3. La carpeta debe tener index.html y avance.html en la raíz.
+4. Probá:
+   /index.html
+   /avance.html
+
+MODO SIMULACIÓN
+
+avance.html ya funciona en modo simulación.
+Al completar el formulario, muestra abajo cómo se verían los registros.
+Estos datos quedan guardados solo en ese navegador.
+
+MODO REAL CON GOOGLE SHEETS
+
+1. Creá una Google Sheet llamada: Avances Guía Team Elite.
+2. En Google Sheets, abrí: Extensiones > Apps Script.
+3. Pegá el contenido del archivo CODIGO-APPS-SCRIPT.js.
+4. Guardá.
+5. Tocá Implementar > Nueva implementación.
+6. Tipo: Aplicación web.
+7. Ejecutar como: Yo.
+8. Quién tiene acceso: Cualquiera.
+9. Implementá y copiá la URL que termina en /exec.
+10. Abrí avance.html y buscá:
+    const GOOGLE_APPS_SCRIPT_URL = "PEGAR_AQUI_URL_DE_GOOGLE_APPS_SCRIPT";
+11. Reemplazá esa línea por:
+    const GOOGLE_APPS_SCRIPT_URL = "TU_URL_DE_APPS_SCRIPT";
+12. Guardá, volvé a subir a Netlify y probá.
+
+LINKS ÚTILES
+
+Para registrar avance:
+https://TU-SITIO.netlify.app/avance.html
+
+También podés preseleccionar el paso con parámetros:
+/avance.html?paso=metas
+/avance.html?paso=ventas
+/avance.html?paso=equipo
+/avance.html?paso=patrocinio
+/avance.html?paso=llamadas
+/avance.html?paso=comunidad
+/avance.html?paso=cierre
+
+Y también podés prellenar mentora:
+/avance.html?paso=metas&mentora=Cynthia

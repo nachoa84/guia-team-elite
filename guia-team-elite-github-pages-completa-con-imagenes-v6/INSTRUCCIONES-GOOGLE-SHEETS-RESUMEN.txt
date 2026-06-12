@@ -1,0 +1,90 @@
+CONEXIÓN REAL A GOOGLE SHEETS + RESUMEN DE AVANCES
+
+OBJETIVO
+La página avance.html va a guardar los registros en una Google Sheet real.
+La planilla tendrá dos pestañas:
+1. Registros: cada envío individual de una socia.
+2. Resumen: avance consolidado por socia y mentora.
+
+PASO 1 · CREAR LA PLANILLA
+1. Entrá a Google Drive.
+2. Creá una Google Sheet nueva.
+3. Nombrala: Avances Guía Team Elite.
+4. No hace falta crear las pestañas a mano; el Apps Script las crea.
+
+PASO 2 · PEGAR EL CÓDIGO
+1. En la planilla, andá a Extensiones > Apps Script.
+2. Borrá todo el código que aparece.
+3. Abrí el archivo CODIGO-APPS-SCRIPT-CON-RESUMEN.js.
+4. Copiá todo el contenido y pegalo en Apps Script.
+5. Tocá Guardar.
+
+PASO 3 · CREAR LAS PESTAÑAS
+1. En Apps Script, arriba donde dice seleccionar función, elegí setupSheets.
+2. Tocá Ejecutar.
+3. Google te va a pedir permisos.
+4. Aceptá los permisos.
+5. Volvé a la planilla: deberían aparecer las pestañas Registros y Resumen.
+
+PASO 4 · PUBLICAR COMO WEB APP
+1. En Apps Script, tocá Implementar > Nueva implementación.
+2. En Tipo, elegí Aplicación web.
+3. Descripción: Registro avances guía.
+4. Ejecutar como: Yo.
+5. Quién tiene acceso: Cualquiera.
+6. Tocá Implementar.
+7. Copiá la URL de la aplicación web. Termina en /exec.
+
+PASO 5 · PEGAR LA URL EN avance.html
+1. Abrí avance.html.
+2. Buscá esta línea:
+   const GOOGLE_APPS_SCRIPT_URL = "PEGAR_AQUI_URL_DE_GOOGLE_APPS_SCRIPT";
+3. Reemplazá el texto por tu URL, por ejemplo:
+   const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/XXXXXXXX/exec";
+4. Guardá el archivo.
+
+PASO 6 · SUBIR A NETLIFY
+1. Subí la carpeta completa a Netlify.
+2. Entrá a https://tu-sitio.netlify.app/avance.html
+3. Cargá una prueba.
+4. Revisá la Google Sheet.
+
+QUÉ VAS A VER EN LA PLANILLA
+Pestaña Registros:
+- Fecha
+- Nombre
+- WhatsApp
+- País
+- Mentora
+- Paso completado
+- Comentario
+
+Pestaña Resumen:
+- Socia
+- WhatsApp
+- País
+- Mentora
+- Skool
+- Videos
+- Metas
+- Ventas
+- Equipo
+- Patrocinio
+- Llamadas
+- Comunidad
+- Cierre
+- Avance
+- %
+- Último paso
+- Última fecha
+- Estado
+- Último comentario
+
+CÓMO USARLO CON LAS MENTORAS
+Por ahora, cada mentora puede filtrar la pestaña Resumen por su nombre.
+Ejemplo: filtrás columna Mentora = Rocío.
+Ahí ve solo sus socias y su avance.
+
+IMPORTANTE
+Si hacés cambios en el código de Apps Script después de publicar, hay que ir a Implementar > Administrar implementaciones > Editar > Nueva versión > Implementar.
+Si no hacés eso, la URL puede seguir usando la versión anterior.

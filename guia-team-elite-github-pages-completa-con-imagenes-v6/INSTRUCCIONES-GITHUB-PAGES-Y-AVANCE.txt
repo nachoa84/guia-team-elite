@@ -1,0 +1,103 @@
+GUÍA TEAM ELITE · SITIO COMPLETO PARA GITHUB PAGES
+====================================================
+
+Este ZIP ya trae la guía completa con imágenes, CSS, JavaScript y la nueva página de avance personal.
+
+QUÉ INCLUYE
+-----------
+- index.html
+- avance.html
+- assets/ con logos, rangos e imágenes de comunidad
+- css/
+- js/
+- .nojekyll para GitHub Pages
+- CODIGO-APPS-SCRIPT-PRIVADO.js
+- Estas instrucciones
+
+IMPORTANTE PARA GITHUB
+----------------------
+No subas el ZIP cerrado.
+
+1. Descomprimí el ZIP en tu computadora.
+2. Entrá a la carpeta descomprimida.
+3. Subí TODO el contenido a GitHub:
+   - index.html
+   - avance.html
+   - assets/
+   - css/
+   - js/
+   - .nojekyll
+   - archivos de instrucciones
+
+Si subís solo index.html y avance.html, las imágenes no van a cargar.
+
+CÓMO FUNCIONA LA NUEVA PÁGINA DE AVANCE
+----------------------------------------
+- La socia entra a avance.html.
+- Marca sus pasos completados.
+- Ese avance queda guardado solo en su dispositivo con localStorage.
+- No se envía nada a Google Sheets mientras está avanzando.
+- Cuando completa el 100%, aparece el botón "Registrar guía finalizada".
+- Recién ahí se guarda en la Google Sheet privada de la patrocinadora.
+- Después aparece el botón para avisar por WhatsApp.
+
+DÓNDE ESTÁ EL BOTÓN EN LA GUÍA
+------------------------------
+El botón "Registrar mi avance" ya está agregado en index.html, debajo de la bienvenida.
+Lleva directo a:
+
+avance.html
+
+CONFIGURAR WHATSAPP Y GOOGLE SHEETS
+-----------------------------------
+Abrí avance.html y buscá esta parte:
+
+const CONFIG = {
+  SPONSOR_NAME: "Nacho / Cynthia",
+  SPONSOR_WHATSAPP: "PEGAR_WHATSAPP_SIN_SIGNO_MAS",
+  GOOGLE_APPS_SCRIPT_URL: "PEGAR_AQUI_URL_DE_GOOGLE_APPS_SCRIPT"
+};
+
+Cambiar:
+- SPONSOR_NAME por el nombre de la patrocinadora.
+- SPONSOR_WHATSAPP por el número con código de país, sin +, sin espacios.
+  Ejemplo Argentina: 5493446000000
+- GOOGLE_APPS_SCRIPT_URL por la URL de Apps Script cuando esté publicado.
+
+PARA CREAR LA GOOGLE SHEET PRIVADA
+----------------------------------
+1. Crear una nueva Google Sheet.
+2. Ir a Extensiones > Apps Script.
+3. Borrar lo que aparece.
+4. Pegar el contenido de CODIGO-APPS-SCRIPT-PRIVADO.js.
+5. Guardar.
+6. Ejecutar una vez la función setupSheets.
+7. Autorizar permisos.
+8. Ir a Implementar > Nueva implementación.
+9. Elegir tipo: Aplicación web.
+10. Ejecutar como: Yo.
+11. Quién tiene acceso: Cualquier usuario.
+12. Implementar.
+13. Copiar la URL de la aplicación web.
+14. Pegar esa URL en GOOGLE_APPS_SCRIPT_URL dentro de avance.html.
+
+PARA DUPLICAR PARA ANDREA, NOE U OTRA PATROCINADORA
+---------------------------------------------------
+Duplicar la carpeta o repositorio y cambiar en avance.html:
+
+const CONFIG = {
+  SPONSOR_NAME: "Andrea",
+  SPONSOR_WHATSAPP: "549XXXXXXXXXX",
+  GOOGLE_APPS_SCRIPT_URL: "URL_DEL_APPS_SCRIPT_DE_ANDREA"
+};
+
+Cada patrocinadora debería tener su propia Google Sheet privada y su propia URL de Apps Script.
+
+PRUEBA RECOMENDADA
+------------------
+1. Abrí avance.html desde el link publicado.
+2. Completá nombre, WhatsApp y país.
+3. Marcá todos los pasos.
+4. Tocá "Registrar guía finalizada".
+5. Revisá que aparezca una fila en la pestaña Finalizados de Google Sheets.
+6. Tocá "Avisar por WhatsApp" y revisá que abra el mensaje armado.

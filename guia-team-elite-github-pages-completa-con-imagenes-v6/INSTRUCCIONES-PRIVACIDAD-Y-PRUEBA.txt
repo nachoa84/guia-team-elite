@@ -1,0 +1,66 @@
+GUÍA DE INICIO · AVANCE PRIVADO POR PATROCINADORA
+
+OBJETIVO
+Esta versión está pensada para que cada patrocinadora tenga su propio registro de avances, sin que una línea/sideline vea el negocio de otra.
+
+La guía puede ser la misma para todas, pero el avance se separa por planilla.
+
+EJEMPLO
+- Nacho/Cynthia usa avance.html conectado a la Google Sheet de Nacho/Cynthia.
+- Andrea puede usar una copia de avance.html conectada a la Google Sheet de Andrea.
+- Noe puede usar una copia de avance.html conectada a la Google Sheet de Noe.
+
+Así cada una ve solo sus propias socias.
+
+ARCHIVOS IMPORTANTES
+- index.html: guía principal.
+- avance.html: página de registro de avance privado.
+- CODIGO-APPS-SCRIPT-CON-RESUMEN.js: código para pegar en Google Apps Script.
+
+CÓMO PROBARLO PARA NACHO/CYNTHIA
+1. Crear una Google Sheet llamada: Avances Guía - Nacho Cynthia.
+2. Ir a Extensiones > Apps Script.
+3. Pegar el contenido de CODIGO-APPS-SCRIPT-CON-RESUMEN.js.
+4. Guardar.
+5. Ejecutar manualmente la función setupSheets para crear las pestañas Registros y Resumen.
+6. Implementar como Aplicación web:
+   - Ejecutar como: Yo.
+   - Quién tiene acceso: Cualquiera.
+7. Copiar la URL de la aplicación web.
+8. Abrir avance.html y buscar:
+
+   const LINEA_NOMBRE = "Nacho / Cynthia";
+   const GOOGLE_APPS_SCRIPT_URL = "PEGAR_AQUI_URL_DE_GOOGLE_APPS_SCRIPT";
+
+9. Reemplazar PEGAR_AQUI_URL_DE_GOOGLE_APPS_SCRIPT por la URL real de Apps Script.
+10. Subir la carpeta a Netlify.
+11. Probar /avance.html registrando avances ficticios.
+12. Revisar que se completen las pestañas Registros y Resumen.
+
+CÓMO HACERLO PARA ANDREA, NOE U OTRA PATROCINADORA
+Cada patrocinadora debe tener SU propia Google Sheet y SU propia URL de Apps Script.
+
+Opción A: cada patrocinadora tiene su propia cuenta de Netlify.
+- Es la opción más limpia y privada.
+- Ella sube su propia copia de la carpeta.
+- Ella pega su propia URL de Apps Script.
+- Sus datos quedan en su cuenta de Google.
+
+Opción B: mismo sitio, páginas separadas.
+- Se puede copiar avance.html y crear avance-andrea.html, avance-noe.html, etc.
+- Cada archivo debe tener su propio LINEA_NOMBRE y su propia GOOGLE_APPS_SCRIPT_URL.
+- Los datos igualmente van a planillas separadas.
+- Importante: quien administra el sitio podría editar archivos, pero no debería tener acceso a las planillas privadas de otras líneas.
+
+PRIVACIDAD / ÉTICA
+Si Noe es sideline, lo más correcto es que Noe tenga su propia planilla y que sus avances no caigan en una planilla administrada por Nacho/Cynthia.
+
+Este sistema permite duplicar la herramienta sin centralizar datos sensibles.
+
+DÓNDE VE LOS AVANCES CADA PATROCINADORA
+En su propia Google Sheet:
+- Registros: cada carga individual.
+- Resumen: avance por socia, último paso, porcentaje y estado.
+
+SIGUIENTE NIVEL
+Cuando esto esté validado, se puede sumar Glide/AppSheet para que cada patrocinadora vea su panel privado más lindo, conectado a su propia planilla o con permisos reales.
