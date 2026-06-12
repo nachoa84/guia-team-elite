@@ -1,0 +1,22 @@
+GUÍA TEAM ELITE · AVANCE SIMPLE v9
+
+Esta versión NO usa Google Sheets, NO usa Apps Script y NO abre WhatsApp.
+
+La socia puede:
+1. Leer la guía en index.html.
+2. Al final tocar “Ver mi avance”.
+3. Marcar sus pasos completados en avance.html.
+4. Ver su porcentaje de avance.
+
+El progreso se guarda solo en el navegador de esa persona mediante localStorage.
+Si abre desde otro celular/computadora, empieza de cero en ese dispositivo.
+
+IMPORTANTE PARA GITHUB:
+- Descomprimir el ZIP.
+- Subir todo el contenido a la raíz del repositorio.
+- Reemplazar index.html, avance.html, css/ y js/.
+- Hacer Commit changes.
+- Esperar 1-2 minutos.
+- Abrir la página con Ctrl + F5 o en incógnito.
+
+Para verificar que se subió bien, el botón debe decir “Ver mi avance” y aparecer solo al final de la guía.
