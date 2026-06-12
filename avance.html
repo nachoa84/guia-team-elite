@@ -378,7 +378,7 @@
     <header class="avance-hero">
       <span class="avance-kicker">Avance personal</span>
       <h1>Marca tu progreso</h1>
-      <p>Usalo como tu checklist personal. Marca cada paso cuando lo completes y volve cuando quieras para seguir desde donde quedaste.</p>
+      <p>Avanza a tu ritmo. Marca cada paso cuando lo termines y usa este espacio para volver a enfocarte en lo que sigue.</p>
     </header>
 
     <div class="avance-grid">
@@ -401,7 +401,7 @@
 
         <div class="final-box" id="final-box" aria-live="polite">
           <h2>🎉 Felicitaciones</h2>
-          <p>Completaste todos los pasos de la Guia de Inicio. Tu progreso queda guardado en este dispositivo para que puedas volver a verlo cuando quieras.</p>
+          <p>Completaste la Guia de Inicio. Siempre podes volver a este espacio cuando lo necesites. Y si ya terminaste, habla con tu patrocinadora: ella quiere verte crecer y va a acompañarte en este proceso.</p>
           <div class="final-actions">
             <a class="button button--primary" href="index.html">Volver a la guia</a>
           </div>
@@ -423,7 +423,7 @@
       { id: "cierre", title: "Cierre", detail: "Completé mi guía y estoy lista para el próximo paso.", href: "index.html#cierre" }
     ];
 
-    const PROGRESS_KEY = "team_elite_progress_simple_v12";
+    const PROGRESS_KEY = "team_elite_progress_simple_v13";
 
     const stepList = document.getElementById("step-list");
     const progressNumber = document.getElementById("progress-number");
@@ -484,7 +484,7 @@
         ? "Marca el primer paso que ya completaste."
         : completed < STEPS.length
           ? `Llevas ${completed} de ${STEPS.length} pasos completados.`
-          : "Completaste todos los pasos de la guia.";
+          : "Guia completada. Siempre podes volver cuando quieras.";
 
       finalBox.classList.toggle("is-visible", completed === STEPS.length);
     }
