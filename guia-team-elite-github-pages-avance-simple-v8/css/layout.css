@@ -1,0 +1,132 @@
+.page-shell {
+  width: 100%;
+  min-height: 100vh;
+  padding: 18px 0;
+}
+
+.app-frame {
+  width: min(100%, 430px);
+  min-height: calc(100vh - 36px);
+  margin: 0 auto;
+  background:
+    radial-gradient(circle at 15% 0%, rgba(214, 205, 195, 0.16), transparent 30%),
+    radial-gradient(circle at 100% 15%, rgba(142, 133, 122, 0.10), transparent 28%),
+    linear-gradient(180deg, rgba(255,255,255,0.78), rgba(248,243,236,0.96)),
+    var(--bg-app);
+  border: 1px solid rgba(142, 133, 122, 0.10);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.hero {
+  padding: 0;
+}
+
+.section {
+  padding: 22px 18px;
+}
+
+.section + .section {
+  border-top: 1px solid rgba(142, 133, 122, 0.10);
+  scroll-margin-top: 20px;
+}
+
+.section-heading {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.section-heading--center {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.section-heading h2,
+.final-card h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.65rem, 7vw, 2.35rem);
+  font-weight: 700;
+  line-height: 0.96;
+  letter-spacing: -0.035em;
+}
+
+.section-heading p:not(.section-kicker),
+.section-lead {
+  font-size: 0.97rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.section-kicker,
+.eyebrow,
+.hero-slide-kicker {
+  color: var(--primary);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.step-section {
+  position: relative;
+}
+
+.mini-block {
+  display: grid;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.mini-block h3 {
+  font-size: 0.92rem;
+  letter-spacing: -0.02em;
+}
+
+.site-footer {
+  display: grid;
+  gap: 12px;
+  padding: 26px 18px 112px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  text-align: center;
+}
+
+.site-footer nav {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.site-footer a {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+@media (max-width: 500px) {
+  .page-shell {
+    padding: 0;
+  }
+
+  .app-frame {
+    width: 100%;
+    min-height: 100vh;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .section {
+    padding: 22px 16px;
+  }
+}
+
+@media (min-width: 900px) {
+  .page-shell {
+    padding: 28px 0;
+  }
+
+  .app-frame {
+    border-radius: 34px;
+  }
+}

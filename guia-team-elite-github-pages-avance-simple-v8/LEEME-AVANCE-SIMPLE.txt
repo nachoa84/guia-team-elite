@@ -1,0 +1,19 @@
+GUÍA TEAM ELITE - V8 AVANCE SIMPLE
+
+Esta versión NO usa Google Sheets, NO usa Apps Script y NO envía mensajes por WhatsApp.
+
+Qué hace:
+- La guía principal sigue en index.html.
+- El botón de avance aparece al final de la guía.
+- avance.html permite que cada socia marque sus pasos completados.
+- El progreso se guarda solo en el navegador de esa persona usando localStorage.
+- Nadie recibe ni ve ese avance desde la página.
+
+Cómo subir a GitHub Pages:
+1. Descomprimir este ZIP.
+2. Subir todo el contenido al repositorio.
+3. Hacer Commit changes.
+4. Esperar unos minutos y actualizar la página con Ctrl + F5.
+
+Importante:
+Si una socia abre la guía desde otro celular, otra computadora o modo incógnito, el progreso puede aparecer en cero porque queda guardado localmente en cada dispositivo.
