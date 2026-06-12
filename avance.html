@@ -122,9 +122,10 @@
 
     .avance-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.58fr);
+      grid-template-columns: minmax(0, 1fr);
       gap: 20px;
-      margin-top: 22px;
+      max-width: 840px;
+      margin: 22px auto 0;
       align-items: start;
     }
 
@@ -375,8 +376,8 @@
     </div>
 
     <header class="avance-hero">
-      <span class="avance-kicker">Tu avance personal</span>
-      <h1>Marcá tu progreso</h1>
+      <span class="avance-kicker">Avance personal</span>
+      <h1>Marca tu progreso</h1>
       <p>Este espacio es solo para que veas cómo vas con la Guía de Inicio. Tu avance se guarda en este celular o computadora y no se envía a ninguna planilla ni a ninguna persona.</p>
     </header>
 
@@ -394,36 +395,18 @@
           <div class="progress-fill" id="progress-fill"></div>
         </div>
 
-        <p id="progress-copy">Empezá marcando el primer paso que ya completaste.</p>
+        <p id="progress-copy">Marca el primer paso que ya completaste.</p>
 
         <div class="step-list" id="step-list"></div>
 
         <div class="final-box" id="final-box" aria-live="polite">
-          <h2>🎉 ¡Felicitaciones!</h2>
-          <p>Completaste todos los pasos de la Guía de Inicio. Tu avance queda guardado en este dispositivo para que puedas volver a verlo cuando quieras.</p>
+          <h2>🎉 Felicitaciones</h2>
+          <p>Completaste todos los pasos de la Guía de Inicio. Tu progreso queda guardado en este dispositivo para que puedas volver a verlo cuando quieras.</p>
           <div class="final-actions">
             <a class="button button--primary" href="index.html">Volver a la guía</a>
           </div>
         </div>
       </main>
-
-      <aside class="avance-card">
-        <h3>Cómo funciona</h3>
-        <p>Marcá cada paso a medida que lo completás. La página guarda tu progreso automáticamente en este navegador.</p>
-
-        <div class="mini-stat">
-          <span>Pasos completados</span>
-          <strong id="steps-count">0 de 9</strong>
-        </div>
-
-        <ul class="side-list">
-          <li><strong>Privado:</strong> nadie recibe tu avance desde esta página.</li>
-          <li><strong>Simple:</strong> no hay Google Sheets, Apps Script ni mensajes externos.</li>
-          <li><strong>Importante:</strong> si abrís la guía desde otro celular o computadora, el progreso puede empezar de cero.</li>
-        </ul>
-
-        <button class="reset-link" id="reset-progress" type="button">Reiniciar mi avance</button>
-      </aside>
     </div>
   </div>
 
@@ -495,12 +478,12 @@
 
       progressNumber.textContent = `${percent}%`;
       progressFill.style.width = `${percent}%`;
-      stepsCount.textContent = `${completed} de ${STEPS.length}`;
+      if (stepsCount) stepsCount.textContent = `${completed} de ${STEPS.length}`;
 
       progressCopy.textContent = completed === 0
-        ? "Empezá marcando el primer paso que ya completaste."
+        ? "Marca el primer paso que ya completaste."
         : completed < STEPS.length
-          ? `Llevás ${completed} de ${STEPS.length} pasos completados.`
+          ? `Llevas ${completed} de ${STEPS.length} pasos completados.`
           : "Completaste todos los pasos de la guía.";
 
       finalBox.classList.toggle("is-visible", completed === STEPS.length);
@@ -517,13 +500,15 @@
       renderProgress();
     });
 
-    resetButton.addEventListener("click", () => {
-      const confirmed = window.confirm("¿Querés reiniciar tu avance en este dispositivo?");
-      if (!confirmed) return;
-      localStorage.removeItem(PROGRESS_KEY);
-      renderSteps();
-      renderProgress();
-    });
+    if (resetButton) {
+      resetButton.addEventListener("click", () => {
+        const confirmed = window.confirm("¿Quieres reiniciar tu avance en este dispositivo?");
+        if (!confirmed) return;
+        localStorage.removeItem(PROGRESS_KEY);
+        renderSteps();
+        renderProgress();
+      });
+    }
 
     renderSteps();
     renderProgress();
