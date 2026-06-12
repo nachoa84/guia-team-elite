@@ -1066,22 +1066,25 @@
 }
 
 
-/* Botón de avance personal en la guía principal */
+/* Bloque de avance personal en la guía principal · v10 */
 .section--avance-cta {
-  padding-top: 0;
+  padding-top: clamp(8px, 2.5vw, 16px);
+  padding-bottom: clamp(18px, 5vw, 34px);
 }
 
 .avance-cta-card {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
   gap: 18px;
-  padding: clamp(22px, 5vw, 32px);
-  border-radius: 30px;
+  padding: clamp(22px, 5vw, 30px);
+  border-radius: 28px;
   background:
-    radial-gradient(circle at top right, rgba(255, 255, 255, 0.76), transparent 34%),
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.82), transparent 36%),
     linear-gradient(135deg, rgba(255, 248, 239, 0.97), rgba(239, 229, 215, 0.94));
-  border: 1px solid rgba(142, 133, 122, 0.18);
-  box-shadow: 0 18px 55px rgba(80, 58, 35, 0.10);
+  border: 1px solid rgba(142, 133, 122, 0.20);
+  box-shadow: 0 18px 48px rgba(80, 58, 35, 0.10);
+  text-align: left;
 }
 
 .avance-cta-card__content {
@@ -1091,43 +1094,32 @@
 
 .avance-cta-card__content h2 {
   margin: 0;
-  font-size: clamp(1.85rem, 9vw, 2.45rem);
-  line-height: 0.98;
+  font-size: clamp(1.9rem, 7.8vw, 2.45rem);
+  line-height: 1.02;
   letter-spacing: -0.055em;
-  max-width: 10ch;
+  max-width: 12ch;
 }
 
 .avance-cta-card__content p:last-child {
   margin: 0;
   color: var(--muted);
-  line-height: 1.55;
+  line-height: 1.58;
   max-width: 34ch;
 }
 
 .avance-cta-card__button {
   width: 100%;
-  min-height: 56px;
+  min-height: 58px;
   justify-content: center;
   white-space: nowrap;
 }
 
-@media (min-width: 520px) {
+@media (min-width: 640px) {
   .avance-cta-card {
-    grid-template-columns: minmax(0, 1fr) auto;
-    align-items: center;
+    padding: 34px;
   }
 
-  .avance-cta-card__button {
-    width: auto;
-    min-width: 190px;
+  .avance-cta-card__content h2 {
+    max-width: none;
   }
-}
-
-/* Ajuste v7: el botón de avance aparece al final de la guía */
-.avance-cta-card--final {
-  margin: clamp(18px, 4vw, 28px) 0 18px;
-}
-
-.section--closing .avance-cta-card {
-  text-align: left;
 }
