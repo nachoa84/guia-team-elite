@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Avance personal para la Guía de Inicio Team Elite.">
-  <title>Mi avance · Guía de Inicio Team Elite</title>
+  <title>Mi avance · Guia de Inicio Team Elite</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -368,24 +368,24 @@
 <body>
   <div class="avance-shell">
     <div class="avance-topbar">
-      <a class="avance-logo" href="index.html" aria-label="Volver a la guía">
+      <a class="avance-logo" href="index.html" aria-label="Volver a la guia">
         <img src="assets/logo-nu-comunidad-transparent.png" alt="Nu Comunidad">
-        <span>Guía de Inicio</span>
+        <span>Guia de Inicio</span>
       </a>
-      <a class="avance-back" href="index.html">← Volver a la guía</a>
+      <a class="avance-back" href="index.html">← Volver a la guia</a>
     </div>
 
     <header class="avance-hero">
       <span class="avance-kicker">Avance personal</span>
       <h1>Marca tu progreso</h1>
-      <p>Este espacio es solo para que veas cómo vas con la Guía de Inicio. Tu avance se guarda en este celular o computadora y no se envía a ninguna planilla ni a ninguna persona.</p>
+      <p>Usalo como tu checklist personal. Marca cada paso cuando lo completes y volve cuando quieras para seguir desde donde quedaste.</p>
     </header>
 
     <div class="avance-grid">
       <main class="avance-card progress-card" aria-labelledby="progress-title">
         <div class="progress-head">
           <div>
-            <p class="avance-kicker">Guía de Inicio Team Elite</p>
+            <p class="avance-kicker">Guia de Inicio Team Elite</p>
             <h2 id="progress-title">Mi progreso</h2>
           </div>
           <strong class="progress-number" id="progress-number">0%</strong>
@@ -401,9 +401,9 @@
 
         <div class="final-box" id="final-box" aria-live="polite">
           <h2>🎉 Felicitaciones</h2>
-          <p>Completaste todos los pasos de la Guía de Inicio. Tu progreso queda guardado en este dispositivo para que puedas volver a verlo cuando quieras.</p>
+          <p>Completaste todos los pasos de la Guia de Inicio. Tu progreso queda guardado en este dispositivo para que puedas volver a verlo cuando quieras.</p>
           <div class="final-actions">
-            <a class="button button--primary" href="index.html">Volver a la guía</a>
+            <a class="button button--primary" href="index.html">Volver a la guia</a>
           </div>
         </div>
       </main>
@@ -412,18 +412,18 @@
 
   <script>
     const STEPS = [
-      { id: "plataforma", title: "Suscripción a la plataforma", detail: "Ingresé a Skool y entiendo dónde está el material.", href: "index.html#plataforma" },
+      { id: "plataforma", title: "Suscripción a la plataforma", detail: "Ingrese a Skool y entiendo donde está el material.", href: "index.html#plataforma" },
       { id: "videos", title: "Videos iniciales", detail: "Vi los videos para empezar con claridad.", href: "index.html#videos-iniciales" },
-      { id: "metas", title: "Paso 1 · Metas", detail: "Conecté con mis metas y mi razón para avanzar.", href: "index.html#metas" },
-      { id: "ventas", title: "Paso 2 · Ventas", detail: "Revisé el material para comenzar a vender con sistema.", href: "index.html#ventas" },
-      { id: "equipo", title: "Paso 3 · Equipo", detail: "Empecé a mirar cómo construir equipo desde el inicio.", href: "index.html#equipo" },
-      { id: "patrocinio", title: "Paso 4 · Patrocinio", detail: "Revisé cómo iniciar y acompañar a una nueva persona.", href: "index.html#patrocinio" },
+      { id: "metas", title: "Paso 1 · Metas", detail: "Conecte con mis metas y mi razón para avanzar.", href: "index.html#metas" },
+      { id: "ventas", title: "Paso 2 · Ventas", detail: "Revise el material para comenzar a vender con sistema.", href: "index.html#ventas" },
+      { id: "equipo", title: "Paso 3 · Equipo", detail: "Empece a mirar cómo construir equipo desde el inicio.", href: "index.html#equipo" },
+      { id: "patrocinio", title: "Paso 4 · Patrocinio", detail: "Revise cómo iniciar y acompañar a una nueva persona.", href: "index.html#patrocinio" },
       { id: "llamadas", title: "Llamadas", detail: "Agendé o participé de las llamadas clave de la comunidad.", href: "index.html#llamadas" },
-      { id: "comunidad", title: "Comunidad", detail: "Revisé cómo acceder a la comunidad y sé dónde pedir ayuda.", href: "index.html#whatsapp" },
+      { id: "comunidad", title: "Comunidad", detail: "Revise cómo acceder a la comunidad y se donde pedir ayuda.", href: "index.html#whatsapp" },
       { id: "cierre", title: "Cierre", detail: "Completé mi guía y estoy lista para el próximo paso.", href: "index.html#cierre" }
     ];
 
-    const PROGRESS_KEY = "team_elite_progress_simple_v10";
+    const PROGRESS_KEY = "team_elite_progress_simple_v12";
 
     const stepList = document.getElementById("step-list");
     const progressNumber = document.getElementById("progress-number");
@@ -484,7 +484,7 @@
         ? "Marca el primer paso que ya completaste."
         : completed < STEPS.length
           ? `Llevas ${completed} de ${STEPS.length} pasos completados.`
-          : "Completaste todos los pasos de la guía.";
+          : "Completaste todos los pasos de la guia.";
 
       finalBox.classList.toggle("is-visible", completed === STEPS.length);
     }
@@ -502,7 +502,7 @@
 
     if (resetButton) {
       resetButton.addEventListener("click", () => {
-        const confirmed = window.confirm("¿Quieres reiniciar tu avance en este dispositivo?");
+        const confirmed = window.confirm("¿Queres reiniciar tu avance en este dispositivo?");
         if (!confirmed) return;
         localStorage.removeItem(PROGRESS_KEY);
         renderSteps();
